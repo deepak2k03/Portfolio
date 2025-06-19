@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-lg;
+  }
+  
+  .glass-effect-dark {
+    @apply bg-black/20 backdrop-blur-md border border-white/10 rounded-lg;
+  }
+  
+  .neon-border {
+    @apply border border-neon-cyan shadow-[0_0_10px_theme(colors.neon.cyan/50)];
+  }
+  
+  .neon-text {
+    @apply text-neon-cyan;
+    text-shadow: 0 0 10px theme(colors.neon.cyan);
+  }
+  
+  .cyber-button {
+    @apply relative px-6 py-3 bg-transparent border-2 border-neon-cyan text-neon-cyan font-semibold uppercase tracking-wider transition-all duration-300 hover:bg-neon-cyan hover:text-black hover:shadow-[0_0_20px_theme(colors.neon.cyan)] transform hover:scale-105;
+  }
+  
+  .cyber-button::before {
+    content: '';
+    @apply absolute inset-0 bg-neon-cyan opacity-0 transition-opacity duration-300;
+    z-index: -1;
+  }
+  
+  .cyber-button:hover::before {
+    @apply opacity-20;
+  }
+  
+  .terminal-cursor::after {
+    content: '|';
+    @apply animate-pulse text-neon-green;
+  }
+  
+  .grid-bg {
+    background-image: 
+      linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  .light-glow-text {
+    @apply text-zinc-900;
+    text-shadow:
+      1px 1px 0 rgba(0, 0, 0, 0.05),
+      2px 2px 4px rgba(0, 0, 0, 0.08);
+  }
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  
+  .rotate-x-180 {
+    transform: rotateX(180deg);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ffff;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00cccc;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(0, 255, 255, 0.3);
+  color: #ffffff;
+}
