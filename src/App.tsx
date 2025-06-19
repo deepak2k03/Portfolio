@@ -53,7 +53,7 @@ function App() {
   }
 
   return (
-    <div className={`min-h-screen transition-colors duration-500 ${
+    <div className={`min-h-screen overflow-x-hidden transition-colors duration-500 ${
       darkMode 
         ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white' 
         : 'bg-gradient-to-br from-gray-100 via-white to-gray-100 text-gray-900'

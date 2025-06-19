@@ -55,7 +55,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode }) => {
             transition={{ duration: 0.8 }}
             className="mb-8"
           >
-            <div className="text-lg font-mono text-neon-cyan mb-4 leading-relaxed text-zinc-800 dark:text-gray-300">
+            <div className="text-lg font-mono text-neon-cyan mb-4 mt-8 leading-relaxed text-zinc-800 dark:text-gray-300">
               Hello World! I'm
             </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-neon-cyan to-neon-purple bg-clip-text text-transparent leading-relaxed text-zinc-800 dark:text-gray-300">
