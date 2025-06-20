@@ -28,7 +28,7 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
     {
       id: 1,
       title: "Code Complexity Analyser",
-      description: "Full-stack e-commerce solution with React, Node.js, and Stripe integration. Features include user authentication, shopping cart, and admin dashboard.",
+      description: "Analyse the time and space complexities of code in C, C++, Python and Java",
       image: codeAnalyserImg,
       tags: ["React", "TaliwindCSS", "JavaScript", "CSS"],
       category: "Frontend",
@@ -39,7 +39,7 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
     {
       id: 2,
       title: "Rest Countries Explorer",
-      description: "Real-time chat application with AI integration using OpenAI API. Features include smart responses, message encryption, and group chats.",
+      description: "Explore the flags, languages spoken, Currency, Population, etc if countries.",
       image: RESTCountriesImg,
       tags: ["React", "TaliwindCSS", "JavaScript", "CSS"],
       category: "Frontend",
@@ -50,7 +50,7 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
     {
       id: 3,
       title: "Currency Converter",
-      description: "RESTful API for task management with authentication, authorization, and real-time notifications. Built with Express.js and PostgreSQL.",
+      description: "Perform the currency coversion between any two currencies in the world",
       image: currencyConverterImg,
       tags: ["React", "TaliwindCSS", "JavaScript", "CSS"],
       category: "Frontend",
