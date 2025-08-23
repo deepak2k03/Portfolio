@@ -1,33 +1,51 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Terminal as TerminalIcon, Minimize2, Maximize2, X } from 'lucide-react';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Terminal as TerminalIcon } from "lucide-react";
 
 interface TerminalProps {
   darkMode: boolean;
 }
 
 const Terminal: React.FC<TerminalProps> = ({ darkMode }) => {
-  const [currentLine, setCurrentLine] = useState(0);
+  const [history, setHistory] = useState<
+    { command: string; output: string }[]
+  >([]);
+  const [input, setInput] = useState("");
   const [isMinimized, setIsMinimized] = useState(false);
 
-  const commands = [
-    { command: 'whoami', output: 'Deepak Singh - Full Stack Developer' },
-    { command: 'cat skills.txt', output: 'React, Node.js, TypeScript, Python, MongoDB' },
-    { command: 'cat interests.txt', output: 'AI/ML, Open Source, Mentoring, Innovation' },
-    { command: 'cat motto.txt', output: '"Code is poetry, and every bug is a haiku waiting to be fixed."' },
-    { command: 'pwd', output: '/home/alex/portfolio' },
-    { command: 'ls -la', output: 'drwxr-xr-x  projects/\ndrwxr-xr-x  skills/\n-rw-r--r--  contact.md' },
-    { command: 'Extracirricular', output: 'Hackbyte 3.0 [Participant]/\nIIT Jabalpur/\n-rw-r--r--  contact.md' },
-  ];
+  const commands: Record<string, string> = {
+    help: `Available commands:
+- whoami
+- skills
+- interests
+- motto
+- pwd
+- ls
+- extracurricular
+- clear`,
+    whoami: "Deepak Singh - Full Stack Developer",
+    skills: "React, Node.js, TypeScript, Python, MongoDB",
+    interests: "AI/ML, Open Source, Mentoring, Innovation",
+    motto: '"Code is poetry, and every bug is a haiku waiting to be fixed."',
+    pwd: "/home/deepak/portfolio",
+    ls: "projects/  skills/  contact.md",
+    extracurricular: "Hackbyte 3.0 [Participant]\nIIT Jabalpur",
+  };
 
-  useEffect(() => {
-    if (currentLine < commands.length) {
-      const timer = setTimeout(() => {
-        setCurrentLine(prev => prev + 1);
-      }, 2000);
-      return () => clearTimeout(timer);
+  const handleCommand = (e: React.FormEvent) => {
+    e.preventDefault();
+    const trimmed = input.trim();
+
+    if (trimmed.length === 0) return;
+
+    if (trimmed === "clear") {
+      setHistory([]);
+    } else {
+      const output = commands[trimmed] || `Command not found: ${trimmed}`;
+      setHistory((prev) => [...prev, { command: trimmed, output }]);
     }
-  }, [currentLine, commands.length]);
+    setInput("");
+  };
 
   return (
     <motion.div
@@ -36,16 +54,18 @@ const Terminal: React.FC<TerminalProps> = ({ darkMode }) => {
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
       className={`${
-        darkMode ? 'bg-gray-900/90' : 'bg-black/90'
+        darkMode ? "bg-gray-900/90" : "bg-black/90"
       } backdrop-blur-md rounded-lg overflow-hidden shadow-2xl border border-neon-cyan/30 ${
-        isMinimized ? 'h-12' : 'h-96'
-      } transition-all duration-300`}
+        isMinimized ? "h-12" : "h-96"
+      } transition-all duration-300 flex flex-col`}
     >
       {/* Terminal Header */}
-      <div className="flex items-center justify-between px-4 py-3 bg-gray-800/80 border-b border-neon-cyan/30">
+      <div className="flex items-center justify-between px-4 py-2 bg-gray-800/80 border-b border-neon-cyan/30">
         <div className="flex items-center space-x-2">
           <TerminalIcon size={16} className="text-neon-cyan" />
-          <span className="text-sm font-mono text-neon-cyan">alex@portfolio:~$</span>
+          <span className="text-sm font-mono text-neon-cyan">
+            Deepak@portfolio:~$
+          </span>
         </div>
         <div className="flex items-center space-x-2">
           <button
@@ -59,38 +79,38 @@ const Terminal: React.FC<TerminalProps> = ({ darkMode }) => {
 
       {/* Terminal Content */}
       {!isMinimized && (
-        <div className="p-4 h-full overflow-y-auto font-mono text-sm ">
+        <div className="flex-1 p-4 overflow-y-auto font-mono text-sm text-gray-300">
           <div className="text-neon-green mb-2">
             Welcome to Deepak's Portfolio Terminal v1.0.0
           </div>
           <div className="text-gray-400 mb-4">
-            Type 'help' for available commands
+            Type <span className="text-neon-cyan">help</span> for available
+            commands
           </div>
-          
-          {commands.slice(0, currentLine).map((cmd, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-              className="mb-3"
-            >
+
+          {/* Command history */}
+          {history.map((entry, i) => (
+            <div key={i} className="mb-2">
               <div className="flex items-center space-x-2 text-neon-cyan">
                 <span>$</span>
-                <span>{cmd.command}</span>
+                <span>{entry.command}</span>
               </div>
-              <div className="text-gray-300 ml-4 mt-1 whitespace-pre-line">
-                {cmd.output}
-              </div>
-            </motion.div>
-          ))}
-          
-          {currentLine < commands.length && (
-            <div className="flex items-center space-x-2 text-neon-cyan">
-              <span>$</span>
-              <span className="animate-pulse">_</span>
+              <div className="ml-4 whitespace-pre-line">{entry.output}</div>
             </div>
-          )}
+          ))}
+
+          {/* Input line */}
+          <form onSubmit={handleCommand} className="flex items-center space-x-2">
+            <span className="text-neon-cyan">$</span>
+            <input
+              type="text"
+              className="flex-1 bg-transparent outline-none text-gray-200 placeholder-gray-500"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              autoFocus
+              placeholder="type a command..."
+            />
+          </form>
         </div>
       )}
     </motion.div>

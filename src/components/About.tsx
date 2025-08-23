@@ -34,42 +34,81 @@ const About: React.FC<AboutProps> = ({ darkMode }) => {
             } p-8 rounded-2xl`}
           >
             <h3 className="text-2xl font-bold mb-6 text-neon-blue">
-              My Journey
+              Competitive Programming Profiles
             </h3>
             <div className="space-y-4 text-gray-300">
-              <p className="leading-relaxed text-zinc-800 dark:text-gray-300">
-                I'm Deepak Singh, a passionate and results-driven Information Technology undergraduate 
-                at Kamla Nehru Institute of Technology, Sultanpur (Batch of 2026), with a strong foundation 
-                in data structures, algorithms, and web development.
-              </p>
-              {/* <p className="leading-relaxed text-zinc-800 dark:text-gray-300">
-                With hands-on experience in building scalable and performance-optimized projects like a Code
-                Complexity Analyzer, Online IDE, and a REST Countries Explorer, I specialize in creating practical 
-                tech solutions with real-world impact.
-              </p> */}
-              <p className="leading-relaxed text-zinc-800 dark:text-gray-300">
-                When I'm not coding, you'll find me contributing to open-source projects, 
-                mentoring aspiring developers, or exploring the latest trends in AI and 
-                machine learning.
-              </p>
-              <p className="leading-relaxed text-zinc-800 dark:text-gray-300">
-                I’m also a competitive programmer with 
-                a 4-star rating on CodeChef, and a Specialist rating on Codeforces.
-              </p>
-            </div>
+  <div className="grid grid-cols-[auto,1fr] gap-6 items-center">
+    {/* CodeChef */}
+    <div className="text-lg font-semibold text-zinc-800 dark:text-gray-300">
+      ⭐ Rated 4 Stars at CodeChef
+    </div>
+    <a
+      href="https://www.codechef.com/users/deepak2k03"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-neon-cyan hover:underline font-medium"
+    >
+      View Profile
+    </a>
 
-            <div className="mt-8 grid grid-cols-2 gap-6">
+    {/* Codeforces */}
+    <div className="text-lg font-semibold text-zinc-800 dark:text-gray-300">
+      🎯 Rated Specialist at Codeforces
+    </div>
+    <a
+      href="https://codeforces.com/profile/deepak2k03"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-neon-cyan hover:underline font-medium"
+    >
+      View Profile
+    </a>
+
+    {/* LeetCode */}
+    <div className="text-lg font-semibold text-zinc-800 dark:text-gray-300">
+      🧩 Rated Knight at LeetCode
+    </div>
+    <a
+      href="https://leetcode.com/deepak2k03"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-neon-cyan hover:underline font-medium"
+    >
+      View Profile
+    </a>
+
+    {/* AtCoder */}
+    <div className="text-lg font-semibold text-zinc-800 dark:text-gray-300">
+      🏆 Rated 384 at Atcoder
+    </div>
+    <a
+      href="https://atcoder.jp/users/deepak2k03"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-neon-cyan hover:underline font-medium"
+    >
+      View Profile
+    </a>
+    <div className="text-lg font-semibold text-zinc-800 dark:text-gray-300">
+      🏆 Total Contests Participated
+    </div>
+    <p>170 and Counting</p>
+  </div>
+</div>
+
+
+            <div className="mt-8 grid grid-cols-2 gap-5">
               <div className="text-center">
-                <div className="text-3xl font-bold text-neon-blue mb-2">20+</div>
-                <div className="text-sm text-gray-400">Projects Made</div>
+                {/* <div className="text-3xl font-bold text-neon-blue mb-2">20+</div> */}
+                {/* <div className="text-sm text-gray-400">Projects Made</div> */}
               </div>
               {/* <div className="text-center">
                 <div className="text-3xl font-bold text-neon-blue mb-2">5+</div>
                 <div className="text-sm text-gray-400">Years Experience</div>
               </div> */}
               <div className="text-center">
-                <div className="text-3xl font-bold text-neon-blue mb-2">10+</div>
-                <div className="text-sm text-gray-400">Technologies</div>
+                {/* <div className="text-3xl font-bold text-neon-blue mb-2">10+</div> */}
+                {/* <div className="text-sm text-gray-400">Technologies</div> */}
               </div>
               {/* <div className="text-center">
                 <div className="text-3xl font-bold text-neon-blue mb-2">100%</div>
