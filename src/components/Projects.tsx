@@ -4,6 +4,10 @@ import { ExternalLink, Github, Filter } from 'lucide-react';
 import codeAnalyserImg from '../assets/codeAnalyser.png'; // or '../assets/...' depending on file location
 import RESTCountriesImg from '../assets/RESTCountries.png'; // or '../assets/...' depending on file location
 import currencyConverterImg from '../assets/currencyConverter.png'; // or '../assets/...' depending on file location
+import portfolioImg from '../assets/portfolio.png';
+import multimind from '../assets/MultiMind.png';
+import skillbridge from '../assets/skillbridge.png';
+import vhg from '../assets/vhg.png'
 
 interface ProjectsProps {
   darkMode: boolean;
@@ -27,70 +31,82 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "Code Complexity Analyser",
-      description: "Analyse the time and space complexities of code in C, C++, Python and Java",
-      image: codeAnalyserImg,
-      tags: ["React", "TaliwindCSS", "JavaScript", "CSS"],
-      category: "Frontend",
-      github: "https://github.com",
-      demo: "https://code-complexity-analyser.netlify.app/",
+      title: "Skill Bridge",
+      description: "A platform for people to exchange skills and build communities.",
+      image: skillbridge,
+      tags: ["Tailwind", "React", "ExpressJS", "NodeJS", "MongoDB", "Socket.io"],
+      category: "fullstack",
+      github: "https://github.com/harshitgupta0910/skill_bridge",
+      demo: "https://skill-bridge-frontend.onrender.com/dashboard",
       featured: true
     },
     {
       id: 2,
-      title: "Rest Countries Explorer",
-      description: "Explore the flags, languages spoken, Currency, Population, etc if countries.",
-      image: RESTCountriesImg,
-      tags: ["React", "TaliwindCSS", "JavaScript", "CSS"],
-      category: "Frontend",
+      title: "Virtual Herbal Garden",
+      description: "Scalable backend service for mobile applications with microservices architecture, Docker deployment, and CI/CD pipeline.",
+      image: vhg,
+      tags: ["Node.js", "Docker", "AWS", "MongoDB"],
+      category: "fullstack",
       github: "https://github.com",
       demo: "https://demo.com",
       featured: true
     },
     {
       id: 3,
+      title: "Portfolio Website",
+      description: "Modern portfolio website with 3D animations, interactive elements, and responsive design. Built with React and Framer Motion.",
+      image: portfolioImg,
+      tags: ["React", "Framer Motion", "Tailwind", "TypeScript"],
+      category: "frontend",
+      github: "https://github.com/deepak2k03/Portfolio",
+      demo: "https://deepak-singh-2k03-portfolio.netlify.app/",
+      featured: true
+    },
+    {
+      id: 4,
+      title: "MultiuMind",
+      description: "Get Responses From Various AI Models at One Place",
+      image: multimind,
+      tags: ["React", "NextJS",  "TaliwindCSS", "JavaScript","OpenRouter", "NodeJS"],
+      category: "frontend",
+      github: "https://github.com/deepak2k03/MultiMind",
+      demo: "https://multi-mind-xi.vercel.app/",
+      featured: true
+    },
+    {
+      id: 5,
+      title: "Code Complexity Analyser",
+      description: "Analyse the time and space complexities of code in C, C++, Python and Java",
+      image: codeAnalyserImg,
+      tags: ["React", "TaliwindCSS", "JavaScript", "CSS"],
+      category: "frontend",
+      github: "https://github.com",
+      demo: "https://code-complexity-analyser.netlify.app/",
+      featured: true
+    },
+    {
+      id: 6,
+      title: "Rest Countries Explorer",
+      description: "Explore the flags, languages spoken, Currency, Population, etc if countries.",
+      image: RESTCountriesImg,
+      tags: ["React", "TaliwindCSS", "JavaScript", "CSS"],
+      category: "frontend",
+      github: "https://github.com",
+      demo: "https://demo.com",
+      featured: true
+    },
+    {
+      id: 7,
       title: "Currency Converter",
       description: "Perform the currency coversion between any two currencies in the world",
       image: currencyConverterImg,
       tags: ["React", "TaliwindCSS", "JavaScript", "CSS"],
-      category: "Frontend",
+      category: "frontend",
       github: "https://github.com",
       demo: "https://demo.com",
       featured: false
     },
-    // {
-    //   id: 4,
-    //   title: "Portfolio Website",
-    //   description: "Modern portfolio website with 3D animations, interactive elements, and responsive design. Built with React and Framer Motion.",
-    //   image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800",
-    //   tags: ["React", "Framer Motion", "Tailwind", "TypeScript"],
-    //   category: "frontend",
-    //   github: "https://github.com",
-    //   demo: "https://demo.com",
-    //   featured: true
-    // },
-    // {
-    //   id: 5,
-    //   title: "Data Analytics Dashboard",
-    //   description: "Interactive dashboard for data visualization with charts, filters, and real-time updates. Perfect for business intelligence.",
-    //   image: "https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=800",
-    //   tags: ["React", "D3.js", "Python", "FastAPI"],
-    //   category: "fullstack",
-    //   github: "https://github.com",
-    //   demo: "https://demo.com",
-    //   featured: false
-    // },
-    // {
-    //   id: 6,
-    //   title: "Mobile App Backend",
-    //   description: "Scalable backend service for mobile applications with microservices architecture, Docker deployment, and CI/CD pipeline.",
-    //   image: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=800",
-    //   tags: ["Node.js", "Docker", "AWS", "MongoDB"],
-    //   category: "backend",
-    //   github: "https://github.com",
-    //   demo: "https://demo.com",
-    //   featured: false
-    // }
+    
   ];
 
   const categories = [

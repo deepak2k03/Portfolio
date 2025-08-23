@@ -21,7 +21,7 @@ export default function Hero({ darkMode }: HeroProps) {
             <img
               src={picc} // ✅ imported image
               alt="Deepak Singh"
-              className="w-[500px] h-[500px] object-cover shadow-2xl border-4 border-neon-cyan rounded-2xl"
+              className="w-[450px] h-[450px] object-cover shadow-2xl border-4 border-neon-cyan rounded-2xl"
             />
           </div>
 
@@ -56,8 +56,8 @@ export default function Hero({ darkMode }: HeroProps) {
             </motion.div>
 
             <p className="text-lg mb-8 max-w-2xl leading-relaxed text-zinc-800 dark:text-gray-300">
-              Crafting digital experiences with cutting-edge technologies.  
-              Building the future, one line of code at a time.
+              I am a Final-year B.Tech student at KNIT, Sultanpur, specializing in Information Technology. 
+              With a strong foundation in Data Structures, Algorithms and web development, I am passionate about competitive programming and continuously seek out challenges to enhance my skills.
             </p>
 
             {/* Buttons */}
@@ -69,7 +69,7 @@ export default function Hero({ darkMode }: HeroProps) {
                 VIEW MY WORK
               </a>
               <a
-                href="/Deepak_Singh_CV.pdf"
+                href=""
                 download
                 className="px-8 py-4 border-2 border-neon-purple text-neon-purple rounded-lg font-semibold hover:bg-neon-purple hover:text-black transition-colors"
               >
