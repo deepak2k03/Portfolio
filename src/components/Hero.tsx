@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import TypeWriter from "./TypeWriter";
+import picc from "../assets/picc.jpg"; // ✅ Correct way to import
 
 interface HeroProps {
   darkMode: boolean;
@@ -13,14 +14,14 @@ export default function Hero({ darkMode }: HeroProps) {
 
       <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
         {/* Flex row for image + text */}
-        <div className="flex flex-col md:flex-row items-center md:items-center gap-24">
+        <div className="flex flex-col md:flex-row items-center gap-16">
           
           {/* Image Section */}
           <div className="flex-shrink-0">
             <img
-              src="src\assets\picc.jpg"
+              src={picc} // ✅ imported image
               alt="Deepak Singh"
-              className="w-[450px] h-[450px] object-cover shadow-2xl border-4 border-neon-cyan rounded-2xl"
+              className="w-[500px] h-[500px] object-cover shadow-2xl border-4 border-neon-cyan rounded-2xl"
             />
           </div>
 
