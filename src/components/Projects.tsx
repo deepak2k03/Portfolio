@@ -44,7 +44,7 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
     {
       id: 2,
       title: "Virtual Herbal Garden",
-      description: "Scalable backend service for mobile applications with microservices architecture, Docker deployment, and CI/CD pipeline.",
+      description: "A Virual Herbal Garden to explore and get information about plants virtually through 3D Models.",
       image: vhg,
       tags: ["Node.js", "Docker", "AWS", "MongoDB"],
       category: "fullstack",
