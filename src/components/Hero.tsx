@@ -63,13 +63,13 @@ export default function Hero({ darkMode }: HeroProps) {
             {/* Buttons */}
             <div className="flex flex-wrap gap-6 justify-center md:justify-start">
               <a
-                href="#work"
+                href="#projects"
                 className="px-8 py-4 border-2 border-neon-cyan text-neon-cyan rounded-lg font-semibold hover:bg-neon-cyan hover:text-black transition-colors"
               >
                 VIEW MY WORK
               </a>
               <a
-                href=""
+                href="https://drive.google.com/file/d/1KbbT9Zyy6QiJ1Raaq3iTJGQNSDVPNOAU/view?usp=sharing"
                 download
                 className="px-8 py-4 border-2 border-neon-purple text-neon-purple rounded-lg font-semibold hover:bg-neon-purple hover:text-black transition-colors"
               >
