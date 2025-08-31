@@ -8,6 +8,7 @@ import portfolioImg from '../assets/portfolio.png';
 import multimind from '../assets/MultiMind.png';
 import skillbridge from '../assets/skillbridge.png';
 import vhg from '../assets/vhg.png'
+import dsasheet from '../assets/sheet.png'
 
 interface ProjectsProps {
   darkMode: boolean;
@@ -88,10 +89,10 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
       id: 6,
       title: "DSA Sheet",
       description: "A DSA sheet containing various problems to practice for each topic from begiiner to advanced level.",
-      image: codeAnalyserImg,
+      image: dsasheet,
       tags: ["React", "TaliwindCSS", "JavaScript",],
       category: "frontend",
-      github: "https://github.com",
+      github: "https://github.com/deepak2k03/Deepak-s-DSA-Sheet",
       demo: "https://dsa-sheet-by-deepak.netlify.app/",
       featured: true
     },
