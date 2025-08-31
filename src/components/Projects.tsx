@@ -86,6 +86,17 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
     },
     {
       id: 6,
+      title: "DSA Sheet",
+      description: "A DSA sheet containing various problems to practice for each topic from begiiner to advanced level.",
+      image: codeAnalyserImg,
+      tags: ["React", "TaliwindCSS", "JavaScript",],
+      category: "frontend",
+      github: "https://github.com",
+      demo: "https://dsa-sheet-by-deepak.netlify.app/",
+      featured: true
+    },
+    {
+      id: 7,
       title: "Rest Countries Explorer",
       description: "Explore the flags, languages spoken, Currency, Population, etc if countries.",
       image: RESTCountriesImg,
@@ -96,7 +107,7 @@ const Projects: React.FC<ProjectsProps> = ({ darkMode }) => {
       featured: true
     },
     {
-      id: 7,
+      id: 8,
       title: "Currency Converter",
       description: "Perform the currency coversion between any two currencies in the world",
       image: currencyConverterImg,
